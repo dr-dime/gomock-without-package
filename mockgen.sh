@@ -1,10 +1,8 @@
 #!/bin/bash
 
 mockgen_all() {
-  for pkg in p1 p2; do
-    find "${pkg}" -name *.go -and -not -name *_test.go -print -exec \
-      "${BASH_SOURCE}" {} \;
-  done
+  find . -name *.go -and -not -name *_test.go -print -exec \
+    "${BASH_SOURCE}" {} \;
 }
 
 mockgen_file() {
